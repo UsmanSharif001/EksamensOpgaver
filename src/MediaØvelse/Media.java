@@ -10,6 +10,14 @@ public abstract class Media {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public double getDuration() {
+        return duration;
+    }
+
     @Override
     public String toString() {
         return "MediaØvelse.Media{" +

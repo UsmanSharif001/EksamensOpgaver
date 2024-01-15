@@ -18,7 +18,7 @@ keyWordØvelse2.seeAlso();
 
         frugtListe.forEach(System.out::println);
 
-        List<String> træSeeAlso = List.of("Buske, Planter, Natur");
+        List<String> træSeeAlso = List.of("Buske, Planter, Natur", "");
 
         KeyWordØvelse keyWordØvelse4 = new KeyWordØvelse("Træ", "Et træ er en plante" + " Se også: " +  træSeeAlso);
         System.out.println(keyWordØvelse4);

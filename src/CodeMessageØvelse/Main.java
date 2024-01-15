@@ -7,7 +7,7 @@ import java.util.Spliterator;
 public class Main {
     public static void main(String[] args) {
 
-        CodeMessage msg1 = new CodeMessage("ABCabc");
+        CodeMessage msg1 = new CodeMessage("Usman");
 
         msg1.convertMessageToNumbers();
 

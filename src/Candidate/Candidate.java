@@ -45,6 +45,7 @@ public class Candidate {
    }
 
 
+
     @Override
     public String toString() {
         return "Candidate{" +

@@ -1,6 +1,8 @@
 package Candidate;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Election {
@@ -29,6 +31,10 @@ public class Election {
       return totalVotes;
 
      }
+
+  public int getTotalVotess() {
+        return candidateList.stream().mapToInt(Candidate::getNumberOfVotes).sum();
+  }
 
 
 

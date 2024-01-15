@@ -5,6 +5,7 @@ import MediaØvelse.Media;
 import MediaØvelse.Video;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MediaMain {
     public static void main(String[] args) {
@@ -15,13 +16,12 @@ public class MediaMain {
 
         ArrayList<Media> mediaList = new ArrayList<>();
 
-        mediaList.add(audio1);
-        mediaList.add(audio2);
-        mediaList.add(video1);
+        mediaList.addAll(List.of(audio1,audio2,video1));
 
-        for (Media media : mediaList) {
-            System.out.println(media);
-        }
+
+        mediaList.forEach(System.out::println);
+
+        mediaList.forEach(media -> System.out.println("Navn: " + media.getName() + "\nVarighed: " + media.getDuration()+"hrs "));
 
 
     }

@@ -11,6 +11,9 @@ public class Video extends Media {
         this.aspectRatio = aspectRatio;
     }
 
+    public String getAspectRatio() {
+        return aspectRatio;
+    }
 
     @Override
     public String toString() {

@@ -21,9 +21,21 @@ public class NamesØvelse1 {
         this.lastName = lastName;
 
     }
-    public NamesØvelse1(String fullName) {
-        this.fullName = fullName;
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFullName() {
+        return fullName;
     }
 
     @Override

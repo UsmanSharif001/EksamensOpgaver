@@ -1,5 +1,6 @@
 package UserØvelse;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Spliterator;
 import java.util.stream.Collectors;
@@ -24,29 +25,31 @@ public class Main {
 
         //Kelly slettes her
         userManager.deleteUser(1);
-
-
-
        List<User> userList = userManager.getUserList();
 
         //userList.addAll(List.of(newUser1, newUser2, newUser3, newUser4));
         System.out.println("Her er brugerne: ");
 
         //ForEach løkke istedet for den traditionnelle måde at skrive det både
-        userList.forEach(user -> System.out.println(user));
+        userList.forEach(System.out::println);
 
         //Sortere efter hvilken rolle de har ADMIN/READER/EDITOR
         userManager.sortSpecificRole();
-        userList.forEach(user -> System.out.println(user));
+        userList.forEach(user -> System.out.println(user.getUserRole()));
+
+        List<Integer> id = userList.stream().map(User::getUserID).toList();
+       id.forEach(userID-> System.out.println("User id " + userID));
+
+       List<Integer> ids = userList.stream().map(User::getUserID).toList();
+        System.out.println("Ids given: ");
+       ids.forEach(System.out::println);
+
+       List<User> userIDsAndNames = userList.stream().sorted(Comparator.comparing(User::getUserID).thenComparing(User::getUserName)).toList();
+       userIDsAndNames.forEach(iii -> System.out.println("IDS given: "  + iii.getUserID() + " Names: " + iii.getUserName()));
 
 
-
-
-        List<Integer> id = userList.stream().map(User::getUserID).collect(Collectors.toList());
-        System.out.println(id);
-
-        List<String>name = userList.stream().map(User::getUserName).collect(Collectors.toList());
-        System.out.println(name);
+        List<String>name = userList.stream().map(User::getUserName).toList();
+        name.forEach(nameList-> System.out.println("Names: " + nameList));
 
         Spliterator<User> spliterato1 = userList.spliterator();
         Spliterator<User>spliterator2 = userList.spliterator();

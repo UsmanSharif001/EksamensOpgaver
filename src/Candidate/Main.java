@@ -25,6 +25,9 @@ public class Main {
       election.addCandidate(candidate5);
       election.addCandidate(candidate6);
       election.addCandidate(candidate7);
+        System.out.println("Test: 12331");
+      int totalVotess = election.getTotalVotess();
+        System.out.println(totalVotess);
 
         //Naming and party only without votes of candidates
         election.getCandidateList().forEach(candidate -> System.out.println("Name: " + candidate.getName() + " Party: " + candidate.getParty()));
@@ -73,17 +76,29 @@ public class Main {
         System.out.println(totalVotes);
 
         List<Candidate> names = election.getCandidateList().stream().sorted(Comparator.comparing(Candidate::getName)).toList();
-        List<Candidate> whatEvers = election.getCandidateList().stream().sorted(Comparator.comparing(Candidate::getName).thenComparing(Candidate::getParty)).toList();
-        OptionalDouble votes = election.getCandidateList().stream().mapToInt(Candidate::getNumberOfVotes).average();
+        List<Candidate> multiComparing = election.getCandidateList().stream().sorted(Comparator.comparing(Candidate::getName).thenComparing(Candidate::getParty)).toList();
+
         System.out.println("Test: ");
-        System.out.println(votes);
 
 
        int totalPartyVotes = election.getCandidateList().stream().mapToInt(Candidate::getNumberOfVotes).sum();
 
-       List<Candidate>WhatEvers = election.getCandidateList().stream().sorted(Comparator.comparing(Candidate::getName)).toList();
+       List<Candidate>getName = election.getCandidateList().stream().sorted(Comparator.comparing(Candidate::getName)).toList();
 
        List<Candidate> practiceToUseCompare = election.getCandidateList().stream().sorted(Comparator.comparing(Candidate::getParty).thenComparing(Candidate::getName)).toList();
+
+       List<String>getNameAndParty = election.getCandidateList().stream().map(pers -> pers.getName() + " from the " +  pers.getParty()).toList();
+
+       List<Candidate>nameAndVote = election.getCandidateList().stream().sorted(Comparator.comparing(Candidate::getName).thenComparing(Candidate::getNumberOfVotes).thenComparing(Candidate::getParty)).toList();
+        System.out.println("TEST321");
+
+       nameAndVote.forEach(s -> System.out.println(s.getName() + " " + s.getNumberOfVotes() + " " + s.getParty()));
+
+        System.out.println("Test: 123");
+
+        getNameAndParty.forEach(System.out::println);
+
+
 
        Spliterator<Candidate> splitSamePartyOnly = election.getCandidateList().spliterator();
 

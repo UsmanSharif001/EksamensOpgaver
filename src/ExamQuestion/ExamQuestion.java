@@ -9,9 +9,6 @@ public class ExamQuestion {
     private char grade;
     private int number;
 
-
-
-
     public ExamQuestion(int number, char grade) {
 
         this.number = number;

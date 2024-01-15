@@ -29,7 +29,7 @@ public class CodeMessage {
 
     public void convertMessageToNumbers() {
 
-        plainText.chars().map(a -> a - 'A' + 1).forEach(System.out::println);
+        plainText.toUpperCase().chars().map(a -> a - 'A' + 1).forEach(System.out::println);
 
     }
 
